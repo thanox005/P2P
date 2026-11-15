@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campeonato P2P</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Campeonato P2P</h1>
+  <p class="sub">Brasileirão 2026 · dupla eliminação</p>
+</header>
+<main>
+  <section class="card">
+    <h2>1. Jogadores</h2>
+    <p class="hint">JSON com id, nome, 3 clubes e titular (que deve ser um dos 3).</p>
+    <textarea id="inPlayers" rows="7" spellcheck="false"></textarea>
+  </section>
+
+  <section class="card">
+    <h2>2. Rodada</h2>
+    <label>Rodada <input id="inRound" type="number" min="1" max="5" value="1"></label>
+    <p class="hint">Resultados: todos os jogos da rodada (lista de objetos).</p>
+    <textarea id="inResults" rows="6" spellcheck="false" placeholder='[{"home":"Vitória","away":"Remo","hg":2,"ag":0}]'></textarea>
+    <p class="hint">Palpites: objeto por jogador (A, B, C, D). Cada jogo usa o placar previsto.</p>
+    <textarea id="inPicks" rows="6" spellcheck="false" placeholder='{"A":[{"home":"Vitória","away":"Remo","ph":2,"pa":1}]}'></textarea>
+    <div class="row">
+      <button id="btnSave" class="btn">Salvar rodada</button>
+      <button id="btnSim" class="btn primary">Simular temporada</button>
+    </div>
+    <p id="status" class="status"></p>
+  </section>
+
+  <section class="card">
+    <h2>3. Chave P2P</h2>
+    <div id="bracket"></div>
+  </section>
+
+  <section class="card">
+    <h2>4. Tabela pré-rodada e pontos</h2>
+    <div id="tables"></div>
+  </section>
+</main>
+<footer>
+  <a id="contato" href="#">Suporte</a>
+</footer>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
