@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campeonato P2P · Entrar</title>
+<style>
+  :root { --bg:#f5f6f9; --card:#fff; --text:#1c2233; --muted:#6b7388; --border:#dfe3ec; --primary:#1f5fd6; --red:#c24141; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#0f1420; --card:#182033; --text:#e9edf7; --muted:#97a0b8; --border:#2a3450; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--text);
+    padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); }
+  .wrap { max-width: 380px; margin: 24px auto; display: grid; gap: 14px; }
+  h1 { font-size: 1.4rem; margin: 0; text-align: center; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .tabs button { flex: 1; }
+  input { width: 100%; padding: 10px; margin: 6px 0 10px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); color: var(--text); font: inherit; }
+  button { font: inherit; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text); cursor: pointer; }
+  button.primary { background: var(--primary); border-color: var(--primary); color: #fff; width: 100%; }
+  button.ativo { border-color: var(--primary); color: var(--primary); }
+  .msg { font-size: .9rem; min-height: 1.2em; color: var(--muted); }
+  .msg.erro { color: var(--red); }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Campeonato P2P</h1>
+
+  <div id="areaLogin" class="card">
+    <div class="tabs">
+      <button id="tabEntrar" class="ativo">Entrar</button>
+      <button id="tabCadastrar">Criar conta</button>
+    </div>
+
+    <form id="formEntrar">
+      <label>E-mail<input id="lEmail" type="email" autocomplete="email" required></label>
+      <label>Senha<input id="lSenha" type="password" autocomplete="current-password" required></label>
+      <button class="primary" type="submit">Entrar</button>
+    </form>
+
+    <form id="formCadastrar" class="hidden">
+      <label>Nome<input id="cNome" type="text" autocomplete="name" required></label>
+      <label>E-mail<input id="cEmail" type="email" autocomplete="email" required></label>
+      <label>Senha<input id="cSenha" type="password" autocomplete="new-password" required></label>
+      <p class="msg">Mínimo 8 caracteres, com letras e números.</p>
+      <button class="primary" type="submit">Criar conta</button>
+    </form>
+
+    <p id="msg" class="msg"></p>
+  </div>
+
+  <div id="areaLogada" class="card hidden">
+    <p>Olá, <strong id="nomeUsuario"></strong>.</p>
+    <p class="msg" id="papelUsuario"></p>
+    <button id="btnSair" class="primary">Sair</button>
+  </div>
+</div>
+
+<script src="auth-rules.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
