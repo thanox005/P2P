@@ -3,9 +3,9 @@
   'use strict';
 
   const CONFIG = {
-    API_URL: 'COLE_AQUI_A_URL_DO_APPS_SCRIPT',   // URL do Web App (terminada em /exec)
-    TOKEN: 'TROQUE_ESTE_TOKEN',                  // mesmo valor de TOKEN no Code.gs
-    WHATSAPP_NUMERO: '',                         // ex.: 5577999999999 (apenas números)
+    API_URL: 'https://script.google.com/macros/s/AKfycbyS68O74r3ToL_jcsO2LbigUtYQorKnGn-WSwDSoopagUmGhIY7E1R0SvAu3wSml13JwA/exec',   // URL do Web App (terminada em /exec)
+    TOKEN: 'bolao2026x7',                  // mesmo valor de TOKEN no Code.gs
+    WHATSAPP_NUMERO: '5577981396292',                         // ex.: 5577999999999 (apenas números)
   };
 
   const $ = (id) => document.getElementById(id);
